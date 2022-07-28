@@ -7,7 +7,6 @@
 body {
   display: flex;
   flex-direction: column;
-  max-width: 320px;
 }
 
 section {
@@ -19,6 +18,95 @@ section input {
   height: 100%;
 }
 
+#button9 {
+  grid-area: button9;
+}
+
+#button8 {
+  grid-area: button8;
+}
+
+#button7 {
+  grid-area: button7;
+}
+
+#button6 {
+  grid-area: button6;
+}
+
+#button5 {
+  grid-area: button5;
+}
+
+#button4 {
+  grid-area: button4;
+}
+
+#button3 {
+  grid-area: button3;
+}
+
+#button2 {
+  grid-area: button2;
+}
+
+#button1 {
+  grid-area: button1;
+}
+
+#button0 {
+  grid-area: button0;
+}
+
+#buttonDecimial {
+  grid-area: buttonDecimial;
+}
+
+#buttonEquals {
+  grid-area: buttonEquals;
+}
+
+#buttonMultiply {
+  grid-area: buttonMultiply;
+}
+
+#buttonDivide {
+  grid-area: buttonDivide;
+}
+
+#buttonSubtract {
+  grid-area: buttonSubtract;
+}
+
+#buttonAdd {
+  grid-area: buttonAdd;
+}
+
+#buttonNegative {
+  grid-area: buttonNegative;
+}
+
+#buttonBackSpace {
+  grid-area: buttonBackSpace;
+}
+
+#buttonClear {
+  grid-area: buttonClear;
+}
+
+#buttonClearAll {
+  grid-area: buttonClearAll;
+}
+
 main {
   display: grid;
+  grid-template-areas: "buttonClearAll buttonClear buttonNegative buttonDivide" "button7 button8 button9 buttonMultiply" "button4 button5 button6 buttonSubtract" "button3 button2 button1 buttonAdd" "button0 buttonDecimial buttonBackSpace buttonEquals";
+  gap: 10px;
+  width: 100%;
+  height: 100vh;
+}
+
+button {
+  width: auto;
+  height: auto;
 }
