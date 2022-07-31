@@ -136,9 +136,10 @@ main {
 button {
     width: 105px;
     height: 70px;
-    background-color: #161F6D;
     color: white;
-    border-radius: 100px;
+    border-radius: 50px;
+    box-shadow: none;
+    border: 2px black solid;
 }
 
 button:active {
