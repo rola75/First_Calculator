@@ -29,13 +29,25 @@ section {
     height: 30%;
     margin-bottom: 5px;
     
-    input {
+   p {
         text-align: right;
-        font-size: 65px;
+        font-size: 80px;
         width: 100%;
-        height: 100%;
-        border-radius: 20px;
-        border: 0.5px rgba(43, 46, 228, 0.986) solid;
+        height: 50%;
+    }
+
+    #screenPrevious {
+        border-top: 2px solid #272727;
+        border-left: 2px solid #272727;
+        border-right: 2px solid #272727;
+        border-radius: 10px 10px 0 0;
+    }
+    
+    #screenCurrent {
+        border-bottom: 2px solid #272727;
+        border-left: 2px solid #272727;
+        border-right: 2px solid #272727;
+        border-radius: 0 0 10px 10px;
     }
 }
 
@@ -142,10 +154,14 @@ button {
     border: 2px black solid;
 }
 
+button:hover {
+    background-color: whitesmoke;
+    color: #272727;
+}
+
 button:active {
     background-color: #272727;
     color: whitesmoke;
-
 }
 
 .numButton {

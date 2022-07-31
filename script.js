@@ -1,8 +1,2 @@
-const screen = document.querySelector(".screen");
-const numButton = document.querySelectorAll(".numButton");
-
-
-
-numButton.forEach (num => {
-
-});
+const numButtons = document.querySelectorAll('.numButton');
+const screen = document.querySelector('input')
