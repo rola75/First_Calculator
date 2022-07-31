@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: black;
+    background-color: #272727;
     display: flex;
     justify-content: center;
 }
@@ -19,7 +19,8 @@ div {
     width: 500px;
     height: 600px;
     margin: 20px 20px;
-    background-color: #00ABE1;
+    background-color: #747474;
+    border-radius: 20px;
 }
 
 section {
@@ -27,12 +28,14 @@ section {
     width: 95%;
     height: 30%;
     margin-bottom: 5px;
-
+    
     input {
         text-align: right;
-        font-size: 50px;
+        font-size: 65px;
         width: 100%;
         height: 100%;
+        border-radius: 20px;
+        border: 0.5px rgba(43, 46, 228, 0.986) solid;
     }
 }
 
@@ -121,11 +124,11 @@ main {
     padding-left: 10px;
     display: grid;
     grid-template-areas:
-        "buttonClearAll buttonClear buttonNegative buttonDivide"
+        "buttonClearAll buttonClear buttonBackSpace buttonDivide"
         "button7 button8 button9 buttonMultiply"
         "button4 button5 button6 buttonSubtract"
         "button3 button2 button1 buttonAdd"
-        "button0 buttonDecimial buttonBackSpace buttonEquals";
+        "button0 buttonDecimial buttonNegative buttonEquals";
     width: 98%;
     height: 65%;
 }
@@ -135,10 +138,24 @@ button {
     height: 70px;
     background-color: #161F6D;
     color: white;
+    border-radius: 100px;
 }
 
 button:active {
-    background-color: lightblue;
-    color: black;
+    background-color: #272727;
+    color: whitesmoke;
 
+}
+
+.numButton {
+    background-color: #14a76c;
+}
+
+.delButton {
+    background-color: #ff652f;
+}
+
+.funcButton {
+    background-color: #fee400;
+    color: #747474;
 }
