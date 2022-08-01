@@ -88,11 +88,11 @@ section #screenCurrent {
   grid-area: button0;
 }
 
-#buttonDecimial {
+#deciButton {
   grid-area: buttonDecimial;
 }
 
-#buttonEquals {
+#equalsButton {
   grid-area: buttonEquals;
 }
 
@@ -112,19 +112,19 @@ section #screenCurrent {
   grid-area: buttonAdd;
 }
 
-#buttonNegative {
+#negativeButton {
   grid-area: buttonNegative;
 }
 
-#buttonBackSpace {
+#backSpaceButton {
   grid-area: buttonBackSpace;
 }
 
-#buttonClear {
+#clearCurrentScreen {
   grid-area: buttonClear;
 }
 
-#buttonClearAll {
+#clearBothScreens {
   grid-area: buttonClearAll;
 }
 
@@ -142,6 +142,7 @@ button {
   color: white;
   border-radius: 50px;
   border: 2px black solid;
+  font-size: 30px;
 }
 
 button:hover {
@@ -163,6 +164,11 @@ button:active {
 }
 
 .funcButton {
+  background-color: #fee400;
+  color: #747474;
+}
+
+.opButton {
   background-color: #fee400;
   color: #747474;
 }
