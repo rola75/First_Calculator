@@ -1,7 +1,11 @@
-const numButtons = document.querySelectorAll('.numButton');
-const operationButtins = document.querySelectorAll('.funcButton');
-const delButton = document.querySelectorAll('.delButton');
 const screenPrevious = document.querySelector('#screenPrevious');
 const screenCurrent = document.querySelector('#screenCurrent');
-
+const numButtons = document.querySelectorAll('.numButton');
+const operationButtons = document.querySelectorAll('.opButton');
+const decimialButton = document.querySelector('#deciButton');
+const equalsButton = document.querySelector('#equalsButton');
+const negativeButton = document.querySelector('#negativeButton');
+const backSpaceButton = document.querySelector('#backSpaceButton');
+const clearCurrentScreen = document.querySelector('#clearcurrentScreen');
+const clearBothScreens =document.querySelector('#clearBothScreens');
 let number = "";
