@@ -9,15 +9,24 @@ const backSpaceButton = document.querySelector('#backSpaceButton');
 const clearCurrentScreen = document.querySelector('#clearCurrentScreen');
 const clearBothScreens =document.querySelector('#clearBothScreens');
 
+const updateScreenCurrent = (number) => {
+    screenCurrent.innerHTML = number;
+};
+
+const updateScreenPrevious = (number) => {
+    screenPrevious.innerHTML = number;
+  };
 
 let currentNumber;
-let previoudNumber;
+let previousNumber;
 let operator;
 
 const handleBackSpaceButton = () => {
-    screenCurrent.slice(0, -1);
+    screenCurrent.innerHTML = "";
   };
   
+
+
 backSpaceButton.addEventListener("click", handleBackSpaceButton);
 
 const handleCurrentScreen = () => {
@@ -29,9 +38,18 @@ clearCurrentScreen.addEventListener("click", handleCurrentScreen);
 const handleClearBothScreens = () => {
     screenCurrent.innerHTML = "";
     screenPrevious.innerHTML = "";
+    operator = "";
   };
   
 clearBothScreens.addEventListener("click", handleClearBothScreens);
+
+decimialButton.addEventListener("click", (event) => {
+    if (!currentNumber.includes(event.target.innerHTML)) {
+      currentNumber += event.target.innerHTML;
+    }
+  
+    updateScreenCurrent(currentNumber);
+  });
 
 // figure out how to get a loop to stop on the number clicked
 //Handler--button need to input it value
@@ -49,12 +67,15 @@ for (let i = 0; i < numButtons.length; i++) {
     numButtons[i].addEventListener('click', handleNumButtons);
 }
 
-
-const handleOpButtons = (event) => {
-    current;
+////working on getting operations to work
+const handleOperationButtons = (event) => {
+    screenCurrent.innerHTML += event.target.innerHTML;
     };
     
-for (let i = 0; i < operationButtons.length; i++) {
-        operationButtons[i].addEventListener('click', handleOpButtons);
-}
+    
+    
+    
+    for (let i = 0; i < operationButtons.length; i++) {
+        operationButtons[i].addEventListener('click', handleOperationButtons);
+    }
     

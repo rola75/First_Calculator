@@ -117,7 +117,7 @@ section #screenCurrent {
 }
 
 #backSpaceButton {
-  grid-area: buttonBackSpace;
+  grid-area: backSpaceButton;
 }
 
 #clearCurrentScreen {
@@ -131,7 +131,7 @@ section #screenCurrent {
 main {
   padding-left: 10px;
   display: grid;
-  grid-template-areas: "buttonClearAll buttonClear buttonBackSpace buttonDivide" "button7 button8 button9 buttonMultiply" "button4 button5 button6 buttonSubtract" "button3 button2 button1 buttonAdd" "button0 buttonDecimial buttonNegative buttonEquals";
+  grid-template-areas: "buttonClearAll buttonClear backSpaceButton buttonDivide" "button7 button8 button9 buttonMultiply" "button4 button5 button6 buttonSubtract" "button3 button2 button1 buttonAdd" "button0 buttonDecimial buttonNegative buttonEquals";
   width: 98%;
   height: 65%;
 }
