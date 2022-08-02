@@ -9,20 +9,16 @@ const backSpaceButton = document.querySelector('#backSpaceButton');
 const clearCurrentScreen = document.querySelector('#clearCurrentScreen');
 const clearBothScreens =document.querySelector('#clearBothScreens');
 
-const updateScreenCurrent = (number) => {
-    screenCurrent.innerHTML = number;
-};
-
-const updateScreenPrevious = (number) => {
-    screenPrevious.innerHTML = number;
-  };
-
 let currentNumber;
 let previousNumber;
 let operator;
 
 const handleBackSpaceButton = () => {
-    screenCurrent.innerHTML = "";
+    if(screenCurrent.innerHTML = ""){
+      return screenCurrent.innerHTML;
+    } else {
+      return screenCurrent.innerHTML.slice(0, -1);
+    }
   };
   
 
@@ -43,13 +39,6 @@ const handleClearBothScreens = () => {
   
 clearBothScreens.addEventListener("click", handleClearBothScreens);
 
-decimialButton.addEventListener("click", (event) => {
-    if (!currentNumber.includes(event.target.innerHTML)) {
-      currentNumber += event.target.innerHTML;
-    }
-  
-    updateScreenCurrent(currentNumber);
-  });
 
 // figure out how to get a loop to stop on the number clicked
 //Handler--button need to input it value
