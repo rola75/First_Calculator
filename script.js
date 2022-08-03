@@ -15,7 +15,11 @@ let operator;
 let result;
 
 //backspace
-const handleBackSpaceButton = () => {};
+const handleBackSpaceButton = () => {
+  if(screenCurrent){
+    screenCurrent.innerHTML = screenCurrent.innerHTML.slice(0, -1);
+  }
+};
 backSpaceButton.addEventListener("click", handleBackSpaceButton);
 
 
@@ -41,7 +45,8 @@ clearBothScreens.addEventListener("click", handleClearBothScreens);
 //number buttons
 const handleNumButtons = (event) => {
   screenCurrent.innerHTML += event.target.innerHTML;
-  number1 = screenCurrent.innerHTML;
+  //number1 = Number(screenCurrent.innerHTML);
+  //console.log(number1);
 };
 for (let i = 0; i < numButtons.length; i++) {
   numButtons[i].addEventListener('click', handleNumButtons);
@@ -51,9 +56,18 @@ for (let i = 0; i < numButtons.length; i++) {
 
 //operation button
 const handleOperationButtons = (event) => {
-  operator = event.target.innerHTML;
-  screenCurrent.innerHTML = "";
-  number2 = screenCurrent.innerHTML;
+  
+  number1 = parseInt(screenCurrent.innerHTML);
+  screenCurrent.innerHTML += event.target.innerHTML
+  operator = screenCurrent.innerHTML.slice(-1);
+  screenCurrent.innerHTML = ""
+  
+  number2 = parseFloat(screenCurrent.innerHTML);
+  
+  //operator = event.target.innerHTML;
+  //screenCurrent.innerHTML = ""; 
+  //number2 = screenCurrent.innerHTML;
+   console.log(number1, operator, number2);
 };
 for (let i = 0; i < operationButtons.length; i++) {
   operationButtons[i].addEventListener('click', handleOperationButtons);
@@ -64,7 +78,8 @@ for (let i = 0; i < operationButtons.length; i++) {
 
 //calculation button
 const calculate = (number1, number2, operator) => {
-  console.log(number1, number2, operator);
+  number2 = parseInt(screenCurrent.innerHTML);
+  console.log(number2, operator);
 
   switch (operator) {
     case '+':
@@ -82,12 +97,8 @@ const calculate = (number1, number2, operator) => {
     case '÷':
       result = number1 / number2;
       break;
-
-    default:
-      result = "";
-      break;
   }
-   return result;
+   screenCurrent.innerHTML = result;
 };
 
 equalsButton.addEventListener("click", calculate);
