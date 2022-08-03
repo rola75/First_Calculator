@@ -16,16 +16,22 @@ let result;
 
 //backspace
 const handleBackSpaceButton = () => {
-  if(screenCurrent){
-    screenCurrent.innerHTML = screenCurrent.innerHTML.slice(0, -1);
-  }
-};
+  // if (screenCurrent) {
+  //   number1 = number1.slice(0, -1);
+  // } else{
+  //   number2 = number2.slice(0, -1);
+  // }
+  
+  screenCurrent.innerHTML = screenCurrent.innerHTML.slice(0, -1);
+ };
 backSpaceButton.addEventListener("click", handleBackSpaceButton);
 
 
 //clear current screen
 const handleCurrentScreen = () => {
   screenCurrent.innerHTML = "";
+  number1 = "";
+  number2 = "";
 };
 clearCurrentScreen.addEventListener("click", handleCurrentScreen);
 
@@ -36,6 +42,8 @@ const handleClearBothScreens = () => {
   screenCurrent.innerHTML = "";
   screenPrevious.innerHTML = "";
   operator = "";
+  number1 = "";
+  number2 = "";
 };
 clearBothScreens.addEventListener("click", handleClearBothScreens);
 
@@ -44,9 +52,10 @@ clearBothScreens.addEventListener("click", handleClearBothScreens);
 
 //number buttons
 const handleNumButtons = (event) => {
+ 
+  number2 += Number(event.target.innerHTML);
   screenCurrent.innerHTML += event.target.innerHTML;
   //number1 = Number(screenCurrent.innerHTML);
-  //console.log(number1);
 };
 for (let i = 0; i < numButtons.length; i++) {
   numButtons[i].addEventListener('click', handleNumButtons);
@@ -57,55 +66,64 @@ for (let i = 0; i < numButtons.length; i++) {
 //operation button
 const handleOperationButtons = (event) => {
   
-  number1 = parseInt(screenCurrent.innerHTML);
+  number1 += Number(screenCurrent.innerHTML);
   screenCurrent.innerHTML += event.target.innerHTML
   operator = screenCurrent.innerHTML.slice(-1);
-  screenCurrent.innerHTML = ""
-  
-  number2 = parseFloat(screenCurrent.innerHTML);
-  
-  //operator = event.target.innerHTML;
-  //screenCurrent.innerHTML = ""; 
-  //number2 = screenCurrent.innerHTML;
-   console.log(number1, operator, number2);
+  screenCurrent.innerHTML = "" 
+  number2 = Number(screenCurrent.innerHTML);
+
+
+
+
+    // number2 = number1
+    // number1 = "";
+    // operator = event.target.innerHTML;
+    // screenCurrent.innerHTML = "";
+    // screenPrevious.innerHTML = number2 + " " + operator;
+
+    //   //screenPrevious.innerHTML = number2;
+    //   //number1 = parseInt(screenCurrent.innerHTML);
+    //   //screenCurrent.innerHTML += event.target.innerHTML
+    //   //operator = screenCurrent.innerHTML.slice(-1);
+    //   //screenCurrent.innerHTML = ""
+    //   //number2 = parseFloat(screenCurrent.innerHTML);
+    //   console.log(operator, number1, number2);
+
 };
 for (let i = 0; i < operationButtons.length; i++) {
   operationButtons[i].addEventListener('click', handleOperationButtons);
 };
 
 
-
-
 //calculation button
-const calculate = (number1, number2, operator) => {
-  number2 = parseInt(screenCurrent.innerHTML);
-  console.log(number2, operator);
+const calculate = (event) => {
+ 
 
   switch (operator) {
     case '+':
-      result = number1 + number2;
+      result = Number(number1) + Number(number2);
       break;
 
     case '-':
-      result = number1 - number2;
+      result = Number(number1) - Number(number2);
       break;
 
     case 'x':
-      result = number1 * number2;
+      result = Number(number1) * Number(number2);
       break;
 
     case '÷':
-      result = number1 / number2;
+      result =Number(number1) / Number(number2);
       break;
   }
-   screenCurrent.innerHTML = result;
+  screenCurrent.innerHTML = result;
 };
 
 equalsButton.addEventListener("click", calculate);
 
 
 
-//console.log(calculate(2,2,"+"));
+//console.log(calculate("2","2","+"));
 
 //Handler--button need to input it value
 //forLoop--iterate through the numButtons
