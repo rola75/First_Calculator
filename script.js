@@ -29,8 +29,6 @@ backSpaceButton.addEventListener("click", handleBackSpaceButton);
 //clear current screen
 const handleCurrentScreen = () => {
   screenCurrent.innerHTML = "";
-  number1 = "";
-  number2 = "";
 };
 clearCurrentScreen.addEventListener("click", handleCurrentScreen);
 
@@ -40,9 +38,6 @@ clearCurrentScreen.addEventListener("click", handleCurrentScreen);
 const handleClearBothScreens = () => {
   screenCurrent.innerHTML = "";
   screenPrevious.innerHTML = "";
-  operator = "";
-  number1 = "";
-  number2 = "";
 };
 clearBothScreens.addEventListener("click", handleClearBothScreens);
 
@@ -52,7 +47,7 @@ clearBothScreens.addEventListener("click", handleClearBothScreens);
 //number buttons
 const handleNumButtons = (event) => {
 
-  number2 += Number(event.target.innerHTML);
+  //number2 += Number(event.target.innerHTML);
   screenCurrent.innerHTML += event.target.innerHTML;
   //number1 = Number(screenCurrent.innerHTML);
 };
@@ -65,11 +60,12 @@ for (let i = 0; i < numButtons.length; i++) {
 //operation button
 const handleOperationButtons = (event) => {
 
-  number1 += Number(screenCurrent.innerHTML);
+ 
   screenCurrent.innerHTML += event.target.innerHTML
+  number1 = Number(screenCurrent.innerHTML.slice(0, -1));
   operator = screenCurrent.innerHTML.slice(-1);
   screenCurrent.innerHTML = ""
-  number2 = Number(screenCurrent.innerHTML);
+  //number2 = Number(screenCurrent.innerHTML);
   // number2 = number1
   // number1 = "";
   // operator = event.target.innerHTML;
@@ -82,7 +78,7 @@ const handleOperationButtons = (event) => {
   //   //operator = screenCurrent.innerHTML.slice(-1);
   //   //screenCurrent.innerHTML = ""
   //   //number2 = parseFloat(screenCurrent.innerHTML);
-  //   console.log(operator, number1, number2);
+  //console.log(operator, number1, number2);
 
 };
 for (let i = 0; i < operationButtons.length; i++) {
@@ -92,9 +88,12 @@ for (let i = 0; i < operationButtons.length; i++) {
 
 //calculation button
 const calculate = (event) => {
+  screenCurrent.innerHTML += event.target.innerHTML;
+  console.log(screenCurrent.innerHTML)
+  number2 = Number(screenCurrent.innerHTML.slice(0,-1));
   switch (operator) {
     case '+':
-      result = Number(number1) + Number(number2);
+      result = number1 + number2;
       break;
 
     case '-':
@@ -108,7 +107,7 @@ const calculate = (event) => {
     case '÷':
       result = Number(number1) / Number(number2);
       break;
-  }
+  } console.log(operator, number1, number2)
   screenCurrent.innerHTML = result;
 };
 
